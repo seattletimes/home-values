@@ -16,7 +16,7 @@
 
         <div ng-controller="HomeController">
           <div class="search-container">
-            <span class="search">Search by city:</span>
+            <span class="search">Search by city or county:</span>
             <input type="text" ng-change="search()" ng-model="searchText">
           </div>
 
@@ -34,7 +34,7 @@
                 <td colspan=100><em>No results found.</em>
               <tr ng-show="found.length == 0 && untouched">
                 <td colspan=100><em>
-                  To search by city in King, Snohomish or Pierce counties, type a name above.</em>
+                  To search by city or county in King, Snohomish or Pierce counties, type a name above.</em>
               <tr ng-repeat="row in found">
                 <td>{{row.city}}
                 <td>{{row.county}}
