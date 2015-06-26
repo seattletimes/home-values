@@ -19,17 +19,22 @@ homeData.forEach(function(row) {
 app.controller("HomeController", ["$scope", function($scope) {
   var all = homeData;
 
+  $scope.untouched = true;
+
   $scope.search = debounce(function() {
+    
     var value = $scope.searchText;
 
     if (!value) {
       $scope.found = [];
+      $scope.untouched = true;
     } else {
       value = value.toLowerCase();
       var filtered = all.filter(function(item) {
         return item.city.toLowerCase().indexOf(value) == 0;
       });
       $scope.found = filtered;
+      $scope.untouched = false;
     }
     $scope.$apply();
   });
